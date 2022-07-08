@@ -84,7 +84,11 @@ WSGI_APPLICATION = 'writeOnline.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': env('POSTGRES_NAME'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_USER_PASSWORD'),
+        'HOST': env('POSTGRES_HOST'),
+        'PORT': '5432',
     }
 }
 

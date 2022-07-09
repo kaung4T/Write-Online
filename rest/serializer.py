@@ -4,6 +4,6 @@ from display.models import Write
 class WriteSerializers(serializers.ModelSerializer):
     class Meta:
         model = Write
-        fields = ["title", "description"]
+        fields = ["user", "title", "description"]
 
 

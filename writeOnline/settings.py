@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'display.apps.DisplayConfig',
+    'rest_framework',
 ]
 
 AUTH_USER_MODEL = 'display.UserProfile'

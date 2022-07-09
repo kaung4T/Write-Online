@@ -7,7 +7,6 @@ class UserProfile(AbstractUser):
     image = models.ImageField(null=True, blank=True, upload_to="profile")
 
 
-
 class Write(models.Model):
     title = models.CharField(max_length=225)
     link = models.URLField(null=True, blank=True)

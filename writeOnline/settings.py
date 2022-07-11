@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+
+import corsheaders.middleware
 import environ
 
 env = environ.Env()
@@ -44,12 +46,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'display.apps.DisplayConfig',
     'rest_framework',
+    'corsheaders',
 ]
 
 AUTH_USER_MODEL = 'display.UserProfile'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -139,3 +143,5 @@ MEDIA_URL = "/media/"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_ALL_ORIGINS = True

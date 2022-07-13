@@ -20,7 +20,7 @@
 <body>
 
 
-    <div class="content" style="width: 20%;">
+    <div class="content" style="width: 20%;min-width: 270px;">
         {% for mes in messages%}
             <p>{{ mes }}</p>
         {% endfor %}
@@ -34,9 +34,8 @@
                 <label class="form-label">Password</label>
                 <input class="form-control" type="password" name="password"></div>
 
-    <label style="float:right;">&nbsp;Create account? <a href="registration" style="text-decoration:none;">Sign up</a></label>
-        <button class="btn btn-sm btn-primary" type="submit" style="float:right;">Sign in</button>
-
+        <button class="btn btn-sm btn-primary" type="submit" style="float:right;margin-bottom:20px;">Sign in</button>
+    <label style="float:right;">Create account? <a href="registration" style="text-decoration:none;">Sign up &nbsp;</a></label>
     </form>
         </div>
 

@@ -16,11 +16,11 @@ def registration(request):
         password2 = request.POST["password2"]
 
         if password1 == password2:
-            if UserProfile.objects.filter(username=name):
+            if UserProfile.objects.filter(username=name).exists():
                 messages.info(request, "Username already exist!")
                 return redirect("registration")
 
-            if UserProfile.objects.filter(email=email):
+            if UserProfile.objects.filter(email=email).exists():
                 messages.info(request, "Email already exist!")
                 return redirect("registration")
 
@@ -36,8 +36,22 @@ def registration(request):
 
 
 def login(request):
+    if request.method == "POST":
+        name = request.POST["username"]
+        password = request.POST["password"]
+
+        user = auth.authenticate(username=name, password=password)
+
+        if user:
+            auth.login(request, user)
+            return redirect("/")
+        else:
+            messages.info(request, "Couldn't find your account")
+            return redirect("login")
+
     return render(request, "login.html")
 
 
 def logout(request):
-    return render(request, "logout.html")
+    auth.logout(request)
+    return redirect("login")

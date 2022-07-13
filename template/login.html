@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+{% include "chain.html" %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,6 +15,7 @@
 <body>
 
 <form action="" method="POST">
+
      <div class="mb-3">
     <input type="text">
      </div>
@@ -20,6 +23,16 @@
     <input type="text">
     </div>
     <button class="btn btn-primary" type="submit">Login</button>
+
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" name="username"></div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password"></div>
+    <button type="submit">Sign in</button>
+
 </form>
 
 </body>

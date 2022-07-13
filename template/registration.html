@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "chain.html" %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+</head>
+<body>
+
+<form action="" method="POST">
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" name="username"></div>
+
+    <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="text" name="email"></div>
+
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" name="password1"></div>
+
+        <div class="mb-3">
+            <label class="form-label">Rewrite Password</label>
+            <input type="password" name="password2"></div>
+    <button type="submit">Sign up</button>
+</form>
+
+</body>
+</html>
+
+{% endblock %}

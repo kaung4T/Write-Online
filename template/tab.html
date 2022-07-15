@@ -17,16 +17,31 @@
 
 
     <ul class="nav" style="float:right;">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown">
+            {{ user.username }}
+          </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
     {% if user.is_authenticated %}
-  <li class="nav-item" >
-    <a class="nav-link" href="#">Sign out</a>
+        <li>
+    <a class="dropdown-item" href="registration">Acc Registration</a>
+  </li>
+  <li>
+    <a class="dropdown-item" href="logout">Sign out</a>
   </li>
     {% else %}
-    <li class="nav-item">
-    <a class="nav-link" href="#">Sign in</a>
+        <li>
+    <a class="dropdown-item" href="registration">Acc Registration</a>
+  </li>
+    <li>
+    <a class="dropdown-item" href="login">Sign in</a>
   </li>
     {% endif %}
-</ul>
+      </ul>
+      </li>
+  </ul>
+
+
    </div>
 </nav>
 

@@ -8,3 +8,15 @@ body {
     margin: auto;
     width: 1100px;
 }
+
+.navbar {
+    background-color: #2e2f30;
+    /*background-color: #28292a;*/
+}
+
+.dropdown-menu {
+    background-color: #2e2f30;
+}
+
+
+

@@ -1,40 +1,43 @@
 
 
 
-<div class="content" style="width: 40%;min-width: 300px;height:50px;">
+<div class="content" style="width: 40%;min-width: 360px;">
 
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar">
    <div class="container-fluid">
     <ul class="nav" style="float:left;">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Profile</a>
+    <a class="nav-link text-light" aria-current="page" href="#">Profile</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Setting</a>
+    <a class="nav-link text-light" href="#">Setting</a>
   </li>
     </ul>
 
 
-
     <ul class="nav" style="float:right;">
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" data-bs-toggle="dropdown">
-            {{ user.username }}
+          <a class="nav-link dropdown-toggle text-light" href="" data-bs-toggle="dropdown">
+              {% if user.is_authenticated %}
+            {{ user.username|truncatechars:10 }}
+              {% else %}
+              User
+              {% endif %}
           </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="">
     {% if user.is_authenticated %}
         <li>
-    <a class="dropdown-item" href="registration">Acc Registration</a>
+    <a class="nav-link text-light" href="registration" style="position:relative;left:8px;">Acc Registration</a>
   </li>
   <li>
-    <a class="dropdown-item" href="logout">Sign out</a>
+    <a class="dropdown-item text-light" href="logout">Sign out</a>
   </li>
     {% else %}
         <li>
-    <a class="dropdown-item" href="registration">Acc Registration</a>
+    <a class="dropdown-item text-light" href="registration">Acc Registration</a>
   </li>
     <li>
-    <a class="dropdown-item" href="login">Sign in</a>
+    <a class="dropdown-item text-light" href="login">Sign in</a>
   </li>
     {% endif %}
       </ul>

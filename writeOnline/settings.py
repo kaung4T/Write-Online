@@ -47,9 +47,12 @@ INSTALLED_APPS = [
     'display.apps.DisplayConfig',
     'rest_framework',
     'corsheaders',
+    'crispy_forms',
 ]
 
 AUTH_USER_MODEL = 'display.UserProfile'
+
+crispy_template_pack = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

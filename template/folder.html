@@ -24,12 +24,13 @@
 <body>
 
     <div class="content" style="width: 40%;min-width: 270px;">
-
-        <center>
+            <div class="content" style="width: 10%;min-width: 170px;">
             <form action="{% url 'folder' %}" method="POST" enctype="multipart/form-data">
-                    {{ folder }}
+                    {{ folder|crispy }}
+                <button class="btn btn-danger btn-sm" type="submit">Create</button>
                 </form>
-            </center>
+
+            </div>
     </div>
 
 

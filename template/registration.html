@@ -23,7 +23,7 @@
         {% for mes in messages%}
             <p>{{ mes }}</p>
         {% endfor %}
-    <form action="" method="POST">
+    <form action="registration" method="POST">
         {% csrf_token %}
         <div class="mb-3">
             <label class="form-label">Username</label>

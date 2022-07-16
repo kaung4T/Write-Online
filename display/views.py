@@ -2,8 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from display.models import UserProfile
-
+from display.form import WriteForm, FolderForm
+from display.form import FolderForm
 # Create your views here.
+
+
 def home(request):
     return render(request, "index.html")
 
@@ -58,4 +61,15 @@ def logout(request):
 
 
 def folder(request):
-    return render(request, "folder.html")
+    f = FolderForm()
+    if request.method == "POST":
+        f = FolderForm(request.POST, request.FILES)
+        if f.is_valid():
+            instance = f.save(commit=False)
+            instance.user = request.user
+            instance.save()
+            messages.info(request, "Your work has successfully been saved")
+            return redirect("/")
+
+    return render(request, "folder.html",
+                  {"folder":f})

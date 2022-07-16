@@ -2,6 +2,7 @@
 {% block content %}
 {% include "chain.html" %}
 
+{% load crispy_forms_tags %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'style.css' %}">
 
@@ -25,7 +26,9 @@
     <div class="content" style="width: 40%;min-width: 270px;">
 
         <center>
-        
+            <form action="{% url 'folder' %}" method="POST" enctype="multipart/form-data">
+                    {{ folder }}
+                </form>
             </center>
     </div>
 

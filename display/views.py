@@ -64,7 +64,7 @@ def write(request):
     if request.method == "POST":
         wf = WriteForm(request.POST, request.FILES)
         if wf.is_valid():
-            instance = wf.save(commit=True)
+            instance = wf.save(commit=False)
             instance.user = request.user
             instance.save()
             messages.success(request, "Your work has successfully been saved")
@@ -72,7 +72,7 @@ def write(request):
 
     wf = WriteForm()
     return render(request, "write.html",
-                  {"write":wf})
+                  {"write": wf})
 
 
 def folder(request):
@@ -87,4 +87,4 @@ def folder(request):
             return redirect("/")
 
     return render(request, "folder.html",
-                  {"folder":f})
+                  {"folder": f})

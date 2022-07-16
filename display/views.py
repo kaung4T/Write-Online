@@ -55,3 +55,7 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect("login")
+
+
+def folder(request):
+    return render(request, "folder.html")

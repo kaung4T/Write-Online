@@ -59,6 +59,7 @@ def logout(request):
     auth.logout(request)
     return redirect("login")
 
+
 def write(request):
     if request.method == "POST":
         wf = WriteForm(request.POST, request.FILES)

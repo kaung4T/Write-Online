@@ -68,7 +68,7 @@ def folder(request):
             instance = f.save(commit=False)
             instance.user = request.user
             instance.save()
-            messages.info(request, "Your work has successfully been saved")
+            messages.success(request, "Your work has successfully been saved")
             return redirect("/")
 
     return render(request, "folder.html",

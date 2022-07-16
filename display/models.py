@@ -22,7 +22,7 @@ class Write(models.Model):
 
 class Folder(models.Model):
     user = models.ForeignKey(UserProfile, default=None, on_delete=models.CASCADE)
-    write = models.ForeignKey(Write, default=None, on_delete=models.CASCADE)
+    write = models.ForeignKey(Write, default=None, on_delete=models.CASCADE, null=True, blank=True)
     folder = models.CharField(max_length=225)
 
     def __str__(self):

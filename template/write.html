@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "chain.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+</head>
+
+{% include "header.html" %}
+
+{% include "tab.html" %}
+<div style="height:80px;"></div>
+
+<body>
+
+    <div class="content" style="width: 40%;min-width: 270px;">
+
+        <center>
+
+            </center>
+    </div>
+
+
+</body>
+</html>
+
+
+{% endblock %}

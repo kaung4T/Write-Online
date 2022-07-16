@@ -59,6 +59,20 @@ def logout(request):
     auth.logout(request)
     return redirect("login")
 
+def write(request):
+    if request.method == "POST":
+        wf = WriteForm(request.POST, request.FILES)
+        if wf.is_valid():
+            instance = wf.save(commit=True)
+            instance.user = request.user
+            instance.save()
+            messages.success(request, "Your work has successfully been saved")
+            return redirect("/")
+
+    wf = WriteForm()
+    return render(request, "write.html",
+                  {"write":wf})
+
 
 def folder(request):
     f = FolderForm()
@@ -68,7 +82,7 @@ def folder(request):
             instance = f.save(commit=False)
             instance.user = request.user
             instance.save()
-            messages.success(request, "Your work has successfully been saved")
+            messages.success(request, "Your folder has been created")
             return redirect("/")
 
     return render(request, "folder.html",

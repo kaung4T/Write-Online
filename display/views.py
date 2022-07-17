@@ -84,13 +84,22 @@ def write2(request, pk):
             instance = wf.save(commit=False)
             instance.user = request.user
             instance.save()
+
+            folder = Folder.objects.get(id=pk)
+            w = Write.objects.get(id=instance.id)
+            w.folder_page = folder.folder
+            w.save()
+
+            folder.write = w
+            folder.save()
+
             messages.success(request, "Your work has successfully been saved")
             return redirect("/")
 
     folder = Folder.objects.get(id=pk)
     wf = WriteForm()
     return render(request, "write2.html",
-                  {"write": wf, "folder":folder})
+                  {"write": wf, "folder": folder})
 
 
 def folder(request):

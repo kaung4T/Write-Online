@@ -19,13 +19,27 @@
 {% include "header.html" %}
 
 {% include "tab.html" %}
+
+<div class="content" style="width: 550px;min-width: 270px;">
+    {% if messages %}
+    <div style="height:40px;"></div>
+    {% endif %}
+{% for mes in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{mes}}!
+                </div>
+                {% endfor %}
+</div>
+
+{% if not messages %}
 <div style="height:80px;"></div>
+{% else %}
+<div style="height:20px;"></div>
+{% endif %}
 
 <body>
-<h1>{{folder.folder}}</h1>
     <div class="content" style="width: 40%;min-width: 270px;">
             <div class="content" style="width: 550px;min-width: 270px;">
-
                 <form action="{% url 'write2' folder.id  %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="mb-3">

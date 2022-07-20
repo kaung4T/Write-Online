@@ -19,4 +19,11 @@ body {
 }
 
 
+.pro1 {
+    color:white;
+    box-shadow: 0px 0px 0px 0px rgba(220, 53, 69);
+}
 
+.pro1:hover {
+    color: #dc3545;
+}

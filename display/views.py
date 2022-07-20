@@ -111,7 +111,7 @@ def folder(request):
             instance.user = request.user
             instance.save()
             folder = Folder.objects.get(id=instance.id)
-            messages.success(request, "Your folder has been created")
+            messages.success(request, "Your folder has been created. You can write now which related with your folder")
             return redirect(f"write2/{folder.id}")
 
     return render(request, "folder.html",

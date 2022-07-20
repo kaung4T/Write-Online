@@ -20,9 +20,11 @@
 
 <body>
     <div class="content" style="width: 20%;min-width: 270px;">
-        {% for mes in messages%}
-            <p>{{ mes }}</p>
-        {% endfor %}
+        {% for mes in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{mes}}!
+                </div>
+                {% endfor %}
     <form action="registration" method="POST">
         {% csrf_token %}
         <div class="mb-3">

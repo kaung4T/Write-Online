@@ -21,9 +21,18 @@
 
 
     <div class="content" style="width: 20%;min-width: 270px;">
-        {% for mes in messages%}
-            <p>{{ mes }}</p>
-        {% endfor %}
+        {% for mes in messages %}
+                {% if 'success' in mes.tags %}
+                <div class="alert alert-success" role="alert">
+                    {{mes}}!
+                </div>
+                {% else %}
+                <div class="alert alert-danger" role="alert">
+                    {{mes}}!
+                </div>
+                {% endif %}
+                {% endfor %}
+
     <form action="login" method="POST">
             {% csrf_token %}
         <div class="mb-3">

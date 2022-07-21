@@ -120,9 +120,12 @@ def folder(request):
 
 def profile(request):
     f = Folder.objects.all()
-    lis = []
+    folders = []
     for ff in f:
-        lis.append(ff)
+        if ff.folder not in folders:
+            folders.append(ff.folder)
+        else:
+            continue
 
     return render(request, "profile.html",
-                  {"folder":f, "list":lis})
+                  {"folders": folders})

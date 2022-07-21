@@ -9,4 +9,5 @@ urlpatterns = [
     path("folder", views.folder, name="folder"),
     path("write", views.write, name="write"),
     path("write2/<str:pk>", views.write2, name="write2"),
+    path("profile", views.profile, name="profile"),
 ]

@@ -116,3 +116,13 @@ def folder(request):
 
     return render(request, "folder.html",
                   {"folder": f})
+
+
+def profile(request):
+    f = Folder.objects.all()
+    lis = []
+    for ff in f:
+        lis.append(ff)
+
+    return render(request, "profile.html",
+                  {"folder":f, "list":lis})

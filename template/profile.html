@@ -26,14 +26,15 @@
 
 <body>
 
-    <div class="content" style="width: 40%;min-width: 270px;">
+    <div class="content" style="width: 60%;min-width: 270px;">
 
         <center>
 
+            <div class="row">
                     {% for folder in folders %}
 
 
-                <div class="card text-center text-dark" style="width: 18rem;">
+                <div class="card text-center text-dark" style="width: 18rem;margin-right:20px;">
               <div class="card-body">
                 <h5 class="card-title">{{ folder }}</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -41,11 +42,8 @@
               </div>
             </div>
 
-
-
-
                     {% endfor %}
-
+                </div>
             </center>
     </div>
 

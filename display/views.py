@@ -129,3 +129,8 @@ def profile(request):
 
     return render(request, "profile.html",
                   {"folders": folders})
+
+
+def profile2(request, pk):
+    return render(request, "profile2.html",
+                  {"pk":pk})

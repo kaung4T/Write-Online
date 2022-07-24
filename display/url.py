@@ -10,4 +10,5 @@ urlpatterns = [
     path("write", views.write, name="write"),
     path("write2/<str:pk>", views.write2, name="write2"),
     path("profile", views.profile, name="profile"),
+    path("profile2/<str:pk>", views.profile2, name="profile2"),
 ]

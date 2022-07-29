@@ -30,7 +30,7 @@ def registration(request):
                 return redirect("registration")
 
             UserProfile.objects.create_user(username=name, email=email, password=password1)
-            messages.success(request, "Account created")
+            messages.success(request, "Account created", extra_tags="success")
             return redirect("login")
 
         else:
@@ -69,7 +69,7 @@ def write(request):
             instance = wf.save(commit=False)
             instance.user = request.user
             instance.save()
-            messages.success(request, "Your work has successfully been saved")
+            messages.success(request, "Your work has successfully been saved", extra_tags="success")
             return redirect("/")
 
     wf = WriteForm()
@@ -111,7 +111,7 @@ def folder(request):
             instance.user = request.user
             instance.save()
             folder = Folder.objects.get(id=instance.id)
-            messages.success(request, "Your folder has been created. You can write now which related with your folder")
+            messages.success(request, "Your folder has been created. You can write now which related with your folder", extra_tags="success")
             return redirect(f"write2/{folder.id}")
 
     return render(request, "folder.html",

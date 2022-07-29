@@ -10,7 +10,7 @@
     <a class="nav-link text-light" aria-current="page" href="{% url 'profile' %}">Profile</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link text-light" href="/">Write</a>
+    <a class="nav-link text-light" href="{% url 'write' %}">Write</a>
   </li>
     </ul>
 
@@ -27,17 +27,17 @@
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="">
     {% if user.is_authenticated %}
         <li>
-    <a class="nav-link text-light" href="registration" style="position:relative;left:8px;">Acc Registration</a>
+    <a class="nav-link text-light" href="{% url 'registration' %}" style="position:relative;left:8px;">Acc Registration</a>
   </li>
   <li>
-    <a class="nav-link text-light" href="logout" style="position:relative;left:8px;">Sign out</a>
+    <a class="nav-link text-light" href="{% url 'logout' %}" style="position:relative;left:8px;">Sign out</a>
   </li>
     {% else %}
         <li>
-    <a class="nav-link text-light" href="registration" style="position:relative;left:8px;">Acc Registration</a>
+    <a class="nav-link text-light" href="{% url 'registration' %}" style="position:relative;left:8px;">Acc Registration</a>
   </li>
     <li>
-    <a class="nav-link text-light" href="login" style="position:relative;left:8px;">Sign in</a>
+    <a class="nav-link text-light" href="{% url 'logout' %}" style="position:relative;left:8px;">Sign in</a>
   </li>
     {% endif %}
       </ul>

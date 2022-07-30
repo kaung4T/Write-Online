@@ -28,16 +28,16 @@ body {
     color: #dc3545;
 }
 
-@media (max-width:500px)
+@media (max-width:499px)
 {
     body {
      margin: auto;
-     width: 500px;
+     width: 200px;
     }
 
     .content {
       margin: auto;
-      width: 500px;
+      width: 200px;
     }
 }
 

@@ -27,3 +27,24 @@ body {
 .pro1:hover {
     color: #dc3545;
 }
+
+@media (max-width:500px)
+{
+    body {
+     margin: auto;
+     width: 500px;
+    }
+
+    .content {
+      margin: auto;
+      width: 500px;
+    }
+}
+
+@media (max-width:800px)
+{
+    .row {
+          margin: auto;
+          width:410px;
+        }
+}

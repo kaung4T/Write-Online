@@ -19,6 +19,10 @@ class WriteForm(forms.ModelForm):
 
 
 class FolderForm(forms.ModelForm):
+    folder = forms.CharField(widget=forms.TextInput(attrs={"style": "background-color:#2e2f30;border-color:#2e2f30;color:white;", "class": "form-control mb-3"}))
     class Meta:
         model = Folder
+        # widgets = {
+        #     "folder":forms.TextInput(attrs={"class": "form-control mb-3"})
+        # }
         fields = ["folder"]

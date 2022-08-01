@@ -105,14 +105,18 @@ def write2(request, pk):
 def folder(request):
     f = FolderForm()
     if request.method == "POST":
-        f = FolderForm(request.POST, request.FILES)
-        if f.is_valid():
-            instance = f.save(commit=False)
-            instance.user = request.user
-            instance.save()
-            folder = Folder.objects.get(id=instance.id)
-            messages.success(request, "Your folder has been created. You can write now which related with your folder", extra_tags="success")
-            return redirect(f"write2/{folder.id}")
+        if UserProfile.objects.filter(username=request.user).exists():
+            f = FolderForm(request.POST, request.FILES)
+            if f.is_valid():
+                instance = f.save(commit=False)
+                instance.user = request.user
+                instance.save()
+                folder = Folder.objects.get(id=instance.id)
+                messages.success(request, "Your folder has been created. You can write now which related with your folder", extra_tags="success")
+                return redirect(f"write2/{folder.id}")
+        else:
+            messages.warning(request, "Please login to create a folder")
+            return redirect("folder")
 
     return render(request, "folder.html",
                   {"folder": f})

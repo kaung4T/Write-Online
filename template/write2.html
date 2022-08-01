@@ -38,8 +38,8 @@
 {% endif %}
 
 <body>
-    <div class="content" style="width: 40%;min-width: 270px;">
-            <div class="content" style="width: 550px;min-width: 270px;">
+    <div class="content" style="width: 32%;min-width:256px;">
+
                 <form action="{% url 'write2' folder.id  %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="mb-3">
@@ -51,7 +51,7 @@
                 <button class="btn btn-success btn-sm" type="submit">Create</button>
                 </form>
 
-            </div>
+
     </div>
 
 

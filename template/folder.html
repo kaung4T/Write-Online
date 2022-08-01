@@ -25,6 +25,17 @@
 
     <div class="content" style="width: 40%;min-width: 270px;">
             <div class="content" style="width: 45%;min-width: 280px;">
+                {% for mes in messages %}
+                {% if 'success' in mes.tags %}
+                <div class="alert alert-success" role="alert">
+                    {{mes}}!
+                </div>
+                {% else %}
+                <div class="alert alert-warning" role="alert">
+                    {{mes}}!
+                 </div>
+                {% endif %}
+                {% endfor %}
             <form action="{% url 'folder' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="mb-3">

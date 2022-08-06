@@ -7,7 +7,7 @@ urlpatterns = [
     path("rest/<str:pk>", views.Resting.as_view(), name="put"),
     path("rest/<str:pk>", views.Resting.as_view(), name="del"),
 
-    path("defaultRest/display", views.display, name="display"),
+    path("defaultRest", views.display, name="display"),
     path("defaultRest/upload", views.upload, name="upload"),
     path("defaultRest/update/<str:pk>", views.update, name="update"),
     path("defaultRest/delete/<str:pk>", views.delete, name="delete"),

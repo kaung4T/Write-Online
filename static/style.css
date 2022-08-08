@@ -12,8 +12,8 @@ body {
 
 .index_content {
     margin: auto;
-    width: 40%;
-    min-width: 640px;
+    max-width: 50%;
+
 }
 
 
@@ -55,15 +55,17 @@ body {
 {
     .index_content {
        margin: auto;
-       width: 200px;
+       width: 40%;
+       min-width:none;
+       background-color:red;
     }
 }
 
 
-@media (max-width:800px)
+@media (max-width:600px)
 {
     .row {
-          margin: auto;
-          width:410px;
+          /*margin: auto;
+          width:610px;*/
         }
 }

@@ -6,11 +6,20 @@ from display.models import Write, Folder
 from display.models import Folder
 from display.form import WriteForm, FolderForm
 from display.form import FolderForm
+from datetime import datetime
 # Create your views here.
 
 
 def home(request):
-    return render(request, "index.html")
+    d = datetime.now()
+    time1 = d.strftime("%H:%M:%S")
+    time = time1.split(":")
+    hour = time[0]
+    minute = time[1]
+    second = time[2]
+
+    return render(request, "index.html",
+                  {"hour":hour, "minute":minute, "second":second})
 
 
 def registration(request):

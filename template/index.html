@@ -30,13 +30,13 @@
 <div class="col-md-7">
         <div class="card" style="background-color:#2e2f30;">
   <div class="card-body">
-     <a class="btn btn-sm btn-outline-danger" href="folder">Create Folder</a>&nbsp;
-        <a class="btn btn-sm btn-danger" href="write">Write</a>
+
+     <span id="hour">{{ hour }}:</span><span id="minute">{{ minute }}:</span><span id="second">{{ second }}</span>
 
   </div>
         </div></div>
 
-    
+
 <div class="col">
         <div class="card" style="text-align:center;background-color:#2e2f30;">
   <div class="card-body">
@@ -52,6 +52,11 @@
 
 </body>
 </html>
+
+
+<script src="{% static 'time.js' %}">
+
+</script>
 
 
 <footer style="height:120px;">

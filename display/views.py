@@ -17,9 +17,16 @@ def home(request):
     hour = time[0]
     minute = time[1]
     second = time[2]
+    day = "AM"
+
+    if int(hour) < 12:
+        day = "AM"
+
+    if int(hour) >= 12:
+        day = "PM"
 
     return render(request, "index.html",
-                  {"hour":hour, "minute":minute, "second":second})
+                  {"hour":hour, "minute":minute, "second":second, "day":day})
 
 
 def registration(request):

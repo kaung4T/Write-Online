@@ -25,10 +25,14 @@ def home(request):
     if int(hour) >= 12:
         day = "PM"
 
+    d2 = datetime.now()
+    time2 = d2.strftime("%I:%M:%S")
+    time_2 = time2.split(":")
+    hour2 = time_2[0]
 
 
     return render(request, "index.html",
-                  {"hour":hour, "minute":minute, "second":second, "day":day})
+                  {"hour":hour2, "minute":minute, "second":second, "day":day})
 
 
 def registration(request):

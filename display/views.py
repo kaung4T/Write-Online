@@ -25,6 +25,8 @@ def home(request):
     if int(hour) >= 12:
         day = "PM"
 
+
+
     return render(request, "index.html",
                   {"hour":hour, "minute":minute, "second":second, "day":day})
 

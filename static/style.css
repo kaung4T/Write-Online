@@ -36,6 +36,13 @@ body {
     color: #dc3545;
 }
 
+.time {
+    text-align:center;
+    color: #95DEE3;
+    font-size:60px;
+    font-family:Orbitron;
+}
+
 @media (max-width:499px)
 {
     body {
@@ -57,7 +64,13 @@ body {
        margin: auto;
        width: 40%;
        min-width:none;
-       background-color:red;
+    }
+
+    .time {
+        text-align:center;
+        color: #95DEE3;
+        font-size:59px;
+        font-family:Orbitron;
     }
 }
 
